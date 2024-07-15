@@ -1,17 +1,38 @@
-import './Header.css';
+import styles from './Header.module.css';
 
 function Header() {
   return (
-    <header className='header'>
+    <header className={styles['header']}>
       <img src='./icons/logo.svg' alt="logo" />
-      <nav className='navbar'>
-        <ul className='nav-menu'>
-          <li className='nav-item'><a href='#' className='nav-link active'>Поиск фильмов</a></li>
-          <li className='nav-item'><a href='#' className='nav-link'>Мои фильмы</a><span className='nav-count'>2</span></li>
-          <li className='nav-item'><a href='#' className='nav-link'>Войти<img src='./icons/login.svg' alt='login' className='nav-image' /></a></li>
-        </ul>
-      </nav>
-    </header>
+
+      <nav className={styles['navbar']}>
+        <ul className={styles['nav-menu']}>
+          <li className={styles['nav-item']}>
+            <a href='#' className={styles['nav-link--active']}
+            >Поиск фильмов
+            </a>
+          </li>
+
+          <li className={styles['nav-item']}>
+            <a href='#' className={styles['nav-link']}>
+              Мои фильмы
+            </a>
+            <span className={styles['nav-count']}>2</span>
+          </li>
+
+          <li className={styles['nav-item']}>
+            <a href='#' className={styles['nav-link']}>
+              Войти
+              <img
+                src='./icons/login.svg'
+                alt='login'
+                className={styles['nav-image']}
+              />
+            </a>
+          </li>
+        </ul >
+      </nav >
+    </header >
   );
 }
 

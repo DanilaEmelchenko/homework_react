@@ -1,4 +1,4 @@
-import './Button.css';
+import styles from './Button.module.css';
 import { useState } from 'react';
 
 function Button({ text }) {
@@ -12,9 +12,9 @@ function Button({ text }) {
     }
   };
 
-return (
-  <button className='button' onClick={handleClick}>{buttonText}</button>
-);
+  return (
+    <button className={styles['button']} onClick={handleClick}>{buttonText}</button>
+  );
 }
 
 export default Button;

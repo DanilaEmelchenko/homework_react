@@ -57,6 +57,6 @@
   cursor: pointer;
 }
 
-.cards__favourites-text.active {
+.cards__favourites-text--active {
   color: #37D8A7;
 }

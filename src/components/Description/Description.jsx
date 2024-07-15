@@ -1,4 +1,4 @@
-import './Description.css';
+import styles from './Description.module.css';
 
 function Description({ text, fontSize }) {
   const sizeFont = {
@@ -6,7 +6,7 @@ function Description({ text, fontSize }) {
   };
 
   return (
-    <p className='description' style={sizeFont}>{text}</p>
+    <p className={styles['description']} style={sizeFont}>{text}</p>
   );
 }
 

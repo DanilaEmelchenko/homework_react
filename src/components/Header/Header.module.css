@@ -22,8 +22,10 @@
   font-weight: 600;
 }
 
-.nav-link.active {
+.nav-link--active {
+  text-decoration: none;
   color: #fff;
+  font-weight: 600;
 }
 
 .nav-item:nth-child(3) .nav-link{
