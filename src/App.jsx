@@ -13,8 +13,8 @@ function App() {
       <Header />
       <Heading text='Поиск' />
       <Description
-        fontSize='16px'
         text='Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.'
+        fontSize='16px'
       />
       <Input />
       <Button text='Искать' />
