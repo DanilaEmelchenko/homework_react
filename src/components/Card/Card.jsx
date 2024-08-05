@@ -3,18 +3,15 @@ import { useState } from 'react';
 import { arrayCard } from './card.data';
 
 function Card() {
-  const [favourites, setFavourites] = useState(new Set());
+  const [favourites, setFavourites] = useState([]);
 
   const handleFavouriteClick = (id) => {
     setFavourites((prevFavourites) => {
-      const newFavourites = new Set(prevFavourites);
-      if (newFavourites.has(id)) {
-        newFavourites.delete(id);
+      if (prevFavourites.includes(id)) {
+        return prevFavourites.filter(favId => favId !== id);
       } else {
-        newFavourites.add(id);
+        return [...prevFavourites, id];
       }
-
-      return newFavourites;
     });
   };
 
@@ -32,11 +29,11 @@ function Card() {
             onClick={() => handleFavouriteClick(card.id)}>
             <img
               className='cards__favourites-icon'
-              src={favourites.has(card.id) ? "./icons/bookmark.svg" : "./icons/like.svg"}
+              src={favourites.includes(card.id) ? "./icons/bookmark.svg" : "./icons/like.svg"}
               alt="like"
             />
-            <span className={`cards__favourites-text ${favourites.has(card.id) ? ' cards__favourites-text active' : ''}`}>
-              {favourites.has(card.id) ? 'В избранном' : 'В избранное'}
+            <span className={`cards__favourites-text ${favourites.includes(card.id) ? ' cards__favourites-text active' : ''}`}>
+              {favourites.includes(card.id) ? 'В избранном' : 'В избранное'}
             </span>
           </div>
         </div>
